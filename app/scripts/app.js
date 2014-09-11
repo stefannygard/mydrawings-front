@@ -80,6 +80,6 @@ var app = angular
         }
       })
       .otherwise({
-        redirectTo: '/logga-in'
+        redirectTo: '/galleri'
       });
   });
