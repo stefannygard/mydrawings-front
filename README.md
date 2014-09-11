@@ -5,3 +5,4 @@ Angular frontend for a drawing app. Made for learning how to use Angular togethe
 
 ## Demo
 [View demo site](http://mydrawings.herokuapp.com)
+Tested on browsers: **Firefox**, **Chrome**, **IE10** and mobile browsers: **Chrome on Android 4.4**
