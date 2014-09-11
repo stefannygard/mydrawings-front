@@ -24,7 +24,8 @@ var app = angular
     'vr.directives.slider',
     'notifications'
   ]);
-  app.config(function ($routeProvider) {
+  app.config(function ($routeProvider, $httpProvider) {
+    $httpProvider.defaults.withCredentials = true;
     $routeProvider
       .when('/logga-in', {
         templateUrl: 'views/login.html',
