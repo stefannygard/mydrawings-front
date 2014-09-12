@@ -51,16 +51,22 @@
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li>
-                  <a ng-show="header.isLoggedIn()" href ng-click="header.logout()">Logga ut</a>
-                  <a ng-show="header.showLogIn()" href="#/logga-in">Logga in</a>
+                  <a ng-show="header.isLoggedIn()" class="ng-hide" href ng-click="header.logout()">Logga ut</a>
+                  <a ng-show="header.showLogIn()" class="ng-hide" href="#/logga-in">Logga in</a>
                 </li>
               </ul>
           </div>
       </div>
     </div>
     
-    <div class="alert alert-danger" role="alert" ng-show="flash" ng-bind="flash">{{ flash }}</div>
+    <div class="alert alert-danger ng-hide" role="alert" ng-show="flash" ng-bind="flash">{{ flash }}</div>
     
+    <div ng-hide="bootstrapStarted" ng-bind="bootstrapStarted">
+      <div role="alert" class="alert alert-success">
+        <strong>Laddar!</strong> Väntar på att servern ska vakna. Det tar bara några sekunder till...
+      </div>
+    </div>
+
     <ng-view></ng-view>
     
     <notifications timeout="100" position="bottom"></notifications>

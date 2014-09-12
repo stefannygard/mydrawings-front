@@ -12,6 +12,8 @@
       $http.get('http://localhost/laravel/public/auth/csrf_token').then(function(response) {
         angular.module('mydrawingsApp').constant('CSRF_TOKEN', response.data.csrf_token);
         angular.bootstrap(document, ['mydrawingsApp']);
+        
+        $rootScope.bootstrapStarted = true;
       });
     });
   }]);

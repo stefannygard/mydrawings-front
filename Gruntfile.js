@@ -290,7 +290,25 @@ module.exports = function (grunt) {
         }]
       }
     },
-
+    
+    'string-replace': {
+      dist: {
+        files: [{
+            expand: true,
+            src: '<%= yeoman.dist %>/scripts/{,*/}*.js'
+        }], 
+        options: {
+          replacements: [{
+            pattern: 'http://localhost/laravel/public',
+            replacement: 'http://lit-stream-9633.herokuapp.com'
+          },{
+            pattern: 'http://localhost/laravel/public/auth/csrf_token',
+            replacement: 'http://lit-stream-9633.herokuapp.com/auth/csrf_token'
+          }]
+        }
+      }
+    },
+    
     // Replace Google CDN references
     cdnify: {
       dist: {
@@ -358,6 +376,7 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-string-replace');
 
   grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
@@ -401,7 +420,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'string-replace'
   ]);
 
   grunt.registerTask('default', [
