@@ -12,7 +12,7 @@ angular.module('mydrawingsApp').run(['$rootScope', '$location', 'AuthenticationS
       }
     }); 
     if(isProtectedRoute && !AuthenticationService.isLoggedIn()) {
-      $location.path('/');
+      $location.path('/logga-in');
       FlashService.show('Please log in to continue.');
     }
   });
