@@ -16,7 +16,7 @@ angular.module('mydrawingsApp')
     this.login = function () {
       AuthenticationService.login(_this.credentials).success(    
         function() {
-          $location.path('/studio');
+          $location.path('/studio').replace();
       });
     };
     this.register = function () {

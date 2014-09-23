@@ -60,8 +60,7 @@ angular.module('mydrawingsApp')
         }, _this.layer);
       
       _this.kinObjArr[index].animation.start();
-      
-      
+
       return shape;
     };
     
